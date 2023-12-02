@@ -6,15 +6,15 @@ use std::io::{self, BufRead};
 Day 1 Advent of Code: https://adventofcode.com/2023/day/1
 
 ## Part 1
-Process a calibration document that consists of lines of text; each line originally 
-contained a specific calibration value that the Elves now need to recover. On each line, 
-the calibration value can be found by combining the first digit and the last digit 
+Process a calibration document that consists of lines of text; each line originally
+contained a specific calibration value that the Elves now need to recover. On each line,
+the calibration value can be found by combining the first digit and the last digit
 (in that order) to form a single two-digit number.
 
 ## Part 2
-Process calbiration document but be able to handle written out words in the content, 
-for exampole 'one', 'two', 'three' ... 'nine' as well as values that are numeric. 
-A moving window algorithm can be used to compare number strings to mappings in a 
+Process calbiration document but be able to handle written out words in the content,
+for exampole 'one', 'two', 'three' ... 'nine' as well as values that are numeric.
+A moving window algorithm can be used to compare number strings to mappings in a
 hash map and translate them to their actual numeric values.
 
 */
@@ -52,7 +52,7 @@ pub fn day1_trebuchet(file_path: &str) -> Result<u32, std::io::Error> {
                 }
             }
             win_start += 1;
-        };
+        }
         let num = 10 * first.unwrap_or(0) + last.unwrap_or(0);
         sum += num;
     }
